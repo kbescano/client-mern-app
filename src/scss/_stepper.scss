@@ -1,0 +1,32 @@
+@import './variable';
+
+.checkout {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 10vh;
+    width: 100%;
+    padding: 5rem 0;
+    gap: 5rem;
+    visibility: hidden;
+
+    @include md {
+        height: 8vh;
+        padding: 2rem 0;
+    }
+
+    &__step {
+        font-size: 1.2rem;
+
+        &--active {
+            color: $color-blue;
+
+        }
+
+        &--disabled {
+            color: $color-dark;
+            opacity: .5;
+            cursor: not-allowed;
+        }
+    }
+}

@@ -1,0 +1,167 @@
+.hero-carousel {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 90vh;
+    width: 100%;
+    overflow: hidden;
+    background-size: 300%;
+    background-image: linear-gradient(90deg, $color-white, $color-lightblue, $color-blue);
+    animation: bg-animation 8s infinite alternate;
+    position: relative;
+    visibility: hidden;
+
+    @keyframes bg-animation {
+        0% {
+            background-position: left
+        }
+
+        50% {
+            background-position: right
+        }
+
+        100% {
+            background-position: left
+        }
+    }
+
+    h1 {
+        position: absolute;
+        top: 40%;
+        z-index: 20;
+        color: $color-white;
+        font-size: clamp(2rem, 5vw, 4rem);
+        text-shadow: 3px 3px 10px black;
+
+    }
+
+    &--btn {
+        position: absolute;
+        top: 65%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        padding: 1em 3em;
+        z-index: 20;
+        font-size: clamp(1.1rem, 5vw, 1.3rem);
+        font-weight: 700;
+        color: $color-white;
+        background-color: rgba(3, 121, 113, .8);
+        background-image: linear-gradient(45deg, $color-blue 80%, $color-light 80%, $color-red);
+        animation: bg-animation 3s infinite alternate;
+        transition: all .3s ease;
+        background-size: 300%;
+        outline: 1px solid white;
+        border: none;
+        cursor: pointer;
+
+        @keyframes bg-animation {
+            0% {
+                background-position: left
+            }
+
+            50% {
+                background-position: right
+            }
+
+            100% {
+                background-position: left
+            }
+        }
+    }
+
+
+    &__left-arrow i {
+        position: absolute;
+        top: 50%;
+        left: 20%;
+        transform: translate(0%, -50%);
+        font-size: 5rem;
+        cursor: pointer;
+        z-index: 10;
+        color: $color-black;
+        opacity: .5;
+    }
+
+    &__right-arrow i {
+        position: absolute;
+        top: 50%;
+        right: 20%;
+        transform: translate(0%, -50%);
+        font-size: 5rem;
+        cursor: pointer;
+        z-index: 10;
+        color: $color-black;
+        opacity: .5;
+    }
+
+    &__slider {
+        opacity: 0;
+        transition-duration: 1s ease;
+        position: relative;
+
+
+        &--active {
+            display: flex;
+            justify-content: center;
+            opacity: 1;
+            transition-duration: 1s;
+            transform: scale(1.08);
+            position: relative;
+            width: 60%;
+            margin: 0 auto;
+
+            @include md {
+                width: 80%;
+            }
+
+            @include sm {
+                width: 90%;
+            }
+
+            @include lg {
+                width: 70%;
+            }
+
+
+            img {
+                height: 100vh;
+                display: block;
+                width: 100rem;
+                object-fit: cover;
+                object-position: center bottom;
+                max-width: 100%;
+
+
+                @include md {
+                    max-width: 100%;
+                    object-fit: cover;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                }
+
+                @include sm {
+                    object-fit: fill;
+                    background-position: center;
+                }
+            }
+
+            button {
+                display: flex;
+                bottom: 5%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                padding: 1rem;
+                position: absolute;
+                font-size: clamp(2rem, 6vw, 4rem);
+                background: $color-white;
+                outline: none;
+                color: $color-dark;
+                border: 1px solid $color-dark;
+                border-radius: 1rem;
+                cursor: pointer;
+            }
+        }
+    }
+
+}

@@ -1,0 +1,373 @@
+@import './variable';
+
+
+header {
+    height: 10vh;
+    background-color: $color-white;
+    box-shadow: rgba(0, 0, 0, 0.20) 0px 8px 24px 0px;
+    width: 100%;
+    visibility: hidden;
+}
+
+.nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    min-height: 10vh;
+    margin: 0 auto;
+    width: 60%;
+    align-items: center;
+    background-size: 200%;
+    background: $color-white;
+    z-index: 100;
+
+    @include lg {
+        width: 80%;
+    }
+
+    @include md {
+        gap: 0;
+        position: relative;
+
+        .nav__menu i {
+            display: flex;
+        }
+
+        width: 100%;
+
+    }
+
+    &__logo {
+        display: flex;
+        align-items: center;
+        font-family: 'Dancing Script', cursive;
+        font-size: 2.2rem;
+        font-weight: 600;
+        letter-spacing: .2rem;
+        color: $color-black;
+        cursor: pointer;
+
+        &:hover {
+            color: $color-blue;
+        }
+
+        &:hover>span {
+            color: $color-lightblue;
+        }
+
+        span {
+            padding-left: .5rem;
+            color: $color-lightblue;
+
+            &:hover {
+                color: $color-light;
+            }
+        }
+
+
+        @include md {
+            display: flex;
+            justify-content: flex-start;
+            padding-left: 1rem;
+        }
+
+    }
+
+    &__links {
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        font-size: clamp(1rem, 5vw, 1.1rem);
+        font-weight: 550;
+        color: $color-black;
+        height: 6rem;
+        gap: 5rem;
+
+
+        @include md {
+            display: none;
+        }
+
+        p { 
+            display: flex;
+            cursor: pointer;
+            color: $color-black;
+            letter-spacing: .2rem;
+
+            &:hover {
+                color: $color-blue;
+            }
+
+            i {
+                padding-right: .1em;
+            }
+        }
+
+        &--dropdown {
+            position: relative;
+            z-index: 1000;
+
+            button {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                cursor: pointer;
+                border: none;
+                outline: none;
+                padding: .5em 1em;
+                background-color: $color-white;
+                letter-spacing: .2rem;
+                color: $color-blue;
+                font-size: clamp(1rem, 5vw, 1.1rem);
+                
+
+                &:hover {
+                    color: $color-black;
+
+                }
+
+                &:hover+ul {
+                    animation: bottom 1s ease;
+                }
+
+
+                i {
+                    padding-left: .2em;
+
+                }
+            }
+
+            ul {
+                position: absolute;
+                display: flex;
+                justify-content: space-around;
+                align-items: center;
+                flex-direction: column;
+                background-color: $color-white;
+                box-shadow: rgba(0, 0, 0, 0.20) 0px 8px 24px 0px;
+                margin-top: .5rem;
+                width: 10rem;
+                border-radius: .5rem;
+                transition: all 1s .5s ease;
+
+                >* {
+                    padding: 1em 2em;
+                    color: $color-blue;
+                    width: 100%;
+
+                    &:hover {
+                        background-color: $color-blue;
+                        color: $color-white;
+                    }
+
+                }
+            }
+
+            @keyframes bottom {
+                0% {
+                    transform: translateY(-2px);
+                }
+
+                100% {
+                    transform: translateY(5px)
+                }
+
+            }
+        }
+
+
+
+        &--button {
+            color: $color-white;
+            border: none;
+            border-radius: .5rem;
+            padding: 0 1.5rem;
+            height: 2.5rem;
+            font-size: 1.2rem;
+            outline: none;
+            background-color: $color-lightblue;
+            transition: background .8s;
+            background-position: center;
+            background-image: radial-gradient(circle, transparent 1%, $color-lightblue .5%);
+            background-size: 12000%;
+            transition: all .3s ease;
+            opacity: .9;
+            cursor: pointer;
+
+            &:active {
+                background-color: $color-white;
+                transition: background 0s;
+                background-size: 100%;
+            }
+
+            &:hover {
+                color: $color-lightblue;
+                background-color: $color-white;
+                box-shadow: 0 1px 1px -1px $color-dark;
+                border-radius: .5rem;
+            }
+
+        }
+
+
+
+    }
+
+    &__menu {
+        display: none;
+
+        @include md {
+            display: flex;
+            justify-content: flex-end;
+            padding-right: 1rem;
+
+        }
+
+        i {
+            color: $color-blue;
+            font-size: 2rem;
+            cursor: pointer;
+            padding-right: 1rem;
+        }
+    }
+
+}
+
+.nav>* {
+    flex-basis: 100%;
+}
+
+.sidebar {
+
+    display: none;
+
+    @include md {
+        background-color: $color-dark;
+        width: 100vw;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        position: fixed;
+        top: 0;
+        left: -100%;
+        z-index: 100;
+    }
+
+    &__links {
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        flex-direction: column;
+        position: relative;
+
+        &--x {
+            position: absolute;
+            font-size: 3rem;
+            top: 3%;
+            right: 10%;
+            color: $color-white;
+
+            i {
+                cursor: pointer;
+            }
+        }
+
+        p {
+            text-decoration: none;
+            color: $color-white;
+            font-size: 2rem;
+            width: 95%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            padding: 0 16px;
+            border-radius: 4px;
+            letter-spacing: .2em;
+
+            &:hover {
+                color: $color-blue;
+            }
+
+            i {
+                padding-right: .5em;
+            }
+
+        }
+
+        &--dropdown {
+            position: relative;
+            z-index: 100;
+
+            button {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                cursor: pointer;
+                border: none;
+                outline: none;
+                padding: .5em 1em;
+                background-color: $color-dark;
+                letter-spacing: .2rem;
+                color: $color-white;
+                font-size: 2rem;
+
+
+                i {
+                    padding-left: .5em;
+                }
+            }
+
+            ul {
+                position: absolute;
+                display: flex;
+                justify-content: space-around;
+                align-items: center;
+                flex-direction: column;
+                background-color: $color-white;
+                box-shadow: rgba(0, 0, 0, 0.20) 0px 8px 24px 0px;
+                margin-top: .5rem;
+                width: 15rem;
+                height: 15rem;
+                border-radius: .5rem;
+
+                >* {
+                    padding: 1rem 1rem;
+                    color: $color-blue;
+                    width: 100%;
+                    font-size: 2rem;
+
+                    &:hover {
+                        background-color: $color-blue;
+                        color: $color-white;
+                    }
+
+                }
+            }
+
+        }
+
+        &--button {
+            background: $color-blue;
+            color: $color-white;
+            border: none;
+            height: 5rem;
+            width: 10rem;
+            font-size: 2rem;
+            border-radius: .5rem;
+            outline: none;
+            transition: all .3s;
+            letter-spacing: .1em;
+            cursor: pointer;
+
+            &:hover {
+                background: $color-white;
+                color: $color-blue;
+
+            }
+        }
+    }
+
+    &.active {
+        left: 0;
+    }
+}

@@ -1,0 +1,263 @@
+@import './variable';
+
+
+.products__container {
+    display: flex;
+    justify-content: center;
+    min-height: 100vh;
+    width: 100%;
+    padding: 6rem 5rem;
+    gap: 1rem;
+    position: relative;
+    visibility: hidden;
+
+    @include md {
+        display: flex;
+        flex-direction: column;
+    }
+
+    @include sm {
+        padding: 2rem;
+    }
+
+}
+
+.clear {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    top: 0;
+    margin: 2rem auto ;
+
+    @include md {
+        left: 10%;
+    }
+
+    h1 {
+        font-size: 1.5rem;
+    }
+
+    span {
+        color: $color-blue;
+    }
+
+    button {
+        display: flex;
+        justify-content: center;
+        margin-left: 1rem;
+        border: none;
+        outline: none;
+        cursor: pointer;
+        
+        
+        i { 
+            font-size: 1.5rem;
+            background: none;
+
+            &:hover {
+                transform: scale(1.2);
+            }
+        }
+    }
+}
+
+.nav-left {
+    height: 100%;
+    flex-basis: 20%;
+    display: block;
+    padding-right: 2rem;
+    position: relative;
+
+    @include md {
+        width: calc(100% + - 1em);
+        padding: 1rem;
+    }
+
+    @include sm {
+        width: calc(100% + - 1em);
+        padding-top: 3rem;
+    }
+
+    ul {
+        background-color: $color-white;
+        padding: 1rem 0;
+        list-style-type: disc;
+
+        @include md {
+            display: flex;
+            justify-content: space-evenly;
+            flex-basis: 100%;
+            margin-bottom: 2rem;
+
+        }
+
+
+        li {
+            box-align: center;
+            align-items: center;
+            display: flex;
+            position: relative;
+            padding: 1rem 1.5rem 1rem 2.5rem;
+            color: $color-blue;
+            font-size: clamp(1rem, 3vw, 1.5rem);
+
+            @include md {
+                width: calc(100% - 2em);
+                padding: 1rem 0;
+            }
+
+            &:hover {
+                background-color: $color-blue;
+                color: $color-white;
+            }
+
+        }
+
+    }
+}
+
+.product-right {
+    display: flex;
+    flex-wrap: wrap;
+    height: 100%;
+    flex-basis: 80%;
+    gap: 3rem;
+
+    @include md {
+        flex-basis: 100%;
+        justify-content: center;
+    }
+
+    @include sm {
+        gap: 5rem;
+    }
+}
+
+.products {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    background-color: $color-white;
+    border-radius: 1rem;
+    width: 27rem;
+    box-shadow: rgba(0, 0, 0, 0.20) 0px 8px 24px 0px;
+
+    @include sm {
+        width: calc(100% + -1em);
+    }
+
+    @include md {
+        width: calc(100% + -1em);
+        
+    }
+
+    &__main {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        padding-top: 1rem;
+        gap: 1rem;
+
+        @include md {
+            height: 40rem;
+        }
+
+        &--price {
+            display: flex;
+            justify-content: flex-end;
+            width: 100%;
+            color: $color-dark;
+            padding-right: 1rem;
+            font-size: 1.3rem;
+            
+
+            span {
+                font-size: .9rem;
+                padding-right: .3rem;
+                font-weight: 700;
+            }
+        }
+
+        &--img {
+            padding-bottom: 1rem;
+            height: 25rem;
+            width: 100%;
+
+            img {
+                display: block;
+                max-width: 100%;
+                object-fit: cover;
+                
+            }
+
+        }
+   
+
+        &--rating {
+            display: flex;
+            justify-content: center;
+            color: $color-blue;
+        }
+
+        &--title {
+            font-size: 1rem;
+            font-weight: 700;
+            color: $color-black;
+        }
+
+        &--brand {
+            color: $color-dark;
+        }
+
+        &--button {
+            width: 100%;
+
+            button {
+                padding: 1.5em 0;
+                width: 100%;
+                height: 100%;
+                outline: none;
+                border: none;
+                cursor: pointer;
+                font-size: 1.2rem;
+                color: $color-white;
+                border-radius: 0 0 1rem 1rem;
+                background-color: $color-blue;
+                transition: background .8s;
+                background-position: center;
+                background-image: radial-gradient(circle, transparent 1%, $color-lightblue .5%);
+                background-size: 12000%;
+                opacity: .9;
+
+                &:active {
+                    background-color: $color-white;
+                    transition: background 0s;
+                    background-size: 100%;
+                }
+
+                &:hover {
+                    opacity: 1;
+                }
+
+            }
+
+        }
+    }
+
+}
+
+.rating {
+    color: $color-light;
+    
+
+    i {
+        letter-spacing: .3em;
+    }
+
+    &--text {
+        padding-left: .5em;
+        color: $color-blue;
+        opacity: .7;
+    }
+}

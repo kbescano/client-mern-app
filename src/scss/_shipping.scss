@@ -1,0 +1,177 @@
+@import './variable';
+
+.shipping {
+    display: flex;
+    justify-content: center;
+    height: 100vh;
+    width: 80%;
+    margin: 0 auto;
+    visibility: hidden;
+
+    @include md {
+        width: 90%;
+
+    }
+
+    @include sm {
+        width: 100%;
+    }
+
+    &__main {
+        display: flex;
+        justify-content: center;
+        background-color: $color-white;
+        height: 50rem;
+        width: 75%;
+        border: none;
+        padding: 2rem;
+        border-radius: .5rem;
+        border: 1px solid rgba($color: $color-blue, $alpha: .1);
+        box-shadow: rgba(0, 0, 0, 0.20) 0px 8px 24px 0px;
+
+        @include lg {
+            width: calc(100% + -3em);
+        }
+
+        @include md {
+            width: 80%;
+        }
+
+        @include sm {
+            width: 100%;
+        }
+
+      
+
+        &--content {
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+            width: 50%;
+            margin: 0 auto;
+            gap: 2rem;
+            padding: 1rem 0;
+
+
+            @include md {
+                width: 80%;
+            }
+
+            @include sm {
+                width: 90%;
+            }
+
+            h1 {
+                display: flex;
+                align-items: center;
+                flex-basis: 20%;
+
+            }
+
+            form {
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                flex-basis: 80%;
+
+            }
+
+            &--input {
+
+
+
+                @include md {
+                    padding: 1rem;
+                }
+
+                @include sm {
+                    padding: 0;
+                }
+
+                label {
+                    font-size: .9rem;
+                    font-weight: 600;
+
+                }
+
+                input {
+                    display: flex;
+                    justify-content: center;
+                    height: 4rem;
+                    width: 100%;
+                    border-radius: .5rem;
+                    outline: none;
+                    border: none;
+                    border: 1px solid rgba($color: $color-blue, $alpha: .05);
+                    padding: 1rem;
+
+
+                    &::placeholder {
+                        font-size: 1rem;
+                    }
+                }
+
+            }
+
+            &--account {
+
+                p {
+                    font-size: 1rem;
+                    font-weight: 300;
+
+                }
+
+                &-sign {
+                    color: $color-black;
+                    opacity: 1;
+                    font-weight: 600;
+                    text-decoration: underline;
+                }
+
+            }
+
+
+            &--button {
+
+                @include md {
+                    padding: 1rem;
+                }
+
+                @include sm {
+                    padding: 0;
+                }
+
+                button {
+                    height: 4rem;
+                    width: 100%;
+                    border-radius: .5rem;
+                    outline: none;
+                    border: none;
+                    font-size: 1.2rem;
+                    letter-spacing: .1em;
+                    color: $color-white;
+                    transition: all .4s;
+                    cursor: pointer;
+                    background-color: $color-blue;
+                    transition: background .8s;
+                    background-position: center;
+                    background-image: radial-gradient(circle, transparent 1%, $color-lightblue .5%);
+                    background-size: 12000%;
+                    opacity: .9;
+
+                    &:active {
+                        background-color: $color-white;
+                        transition: background 0s;
+                        background-size: 100%;
+                    }
+
+                    &:hover {
+                        opacity: 1;
+                    }
+
+                }
+
+            }
+        }
+    }
+}

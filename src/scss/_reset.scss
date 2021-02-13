@@ -1,0 +1,64 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap');
+
+@import './variable';
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+
+
+}
+
+html {
+  font-size: 62.5%;
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #FDFCEC;
+  font-family: 'Roboto', sans-serif;
+  line-height: 1.25rem;
+  min-height: 100vh;
+}
+
+::selection {
+  color: $color-red;
+}
+
+a {
+  text-decoration: none;
+}
+
+li {
+  list-style: none;
+}
+
+i {
+  overflow: hidden;
+
+}
+
+.fa-check {
+  color: $color-green;
+}
+
+.fa-trash,
+.fa-times {
+  color: $color-red;
+}
+
+footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top: 0;
+  text-align: center;
+  font-size: 1.5rem;
+  color: $color-dark;
+  opacity: .2;
+  height: 10vh;
+}

@@ -1,0 +1,118 @@
+@import './variable';
+
+.createproduct {
+    display: flex;
+    justify-content: center;
+    width: 75%;
+    margin: 5rem auto;
+    height: 80rem;
+
+    @include md {
+        width: 90%;
+        padding: 2rem;
+        margin: 2rem auto;
+    }
+
+    @include sm {
+        width: 100%;
+    }
+
+    &__main {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: $color-white;
+        width: 80%;
+        border: none;
+        padding: 5rem 0;
+        gap: 5rem;
+        border: 1px solid rgba($color: $color-blue, $alpha: .1);
+        box-shadow: rgba(0, 0, 0, 0.20) 0px 8px 24px 0px;
+
+        @include md {
+            width: 90%;
+            padding: 2rem 0;
+        }
+
+        &--content {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-evenly;
+            width: 40%;
+            gap: 3rem;
+
+            @include md {
+                width: 80%;
+            }
+
+            form {
+                display: flex;
+                flex-direction: column;
+                justify-content: space-around;
+                gap: 1.5rem;
+                height: 100%;
+            }
+
+
+            &--input {
+                display: flex;
+                flex-direction: column;
+
+                label {
+                    font-size: .8rem;
+                    font-weight: 600;
+                    padding-bottom: .3rem;
+                }
+
+                input {
+                    display: flex;
+                    justify-content: center;
+                    height: 4rem;
+                    width: 100%;
+                    border-radius: .5rem;
+                    outline: none;
+                    border: none;
+                    border: 1px solid rgba($color: $color-blue, $alpha: .05);
+                    padding: 1rem;
+
+
+                    &::placeholder {
+                        font-size: 1rem;
+                    }
+                }
+
+            }
+
+            &--button {
+
+                @include md {
+                    padding: 1rem;
+                }
+
+                @include sm {
+                    padding: 0;
+                }
+
+                button {
+                    height: 4rem;
+                    width: 100%;
+                    border-radius: .5rem;
+                    outline: none;
+                    border: none;
+                    background: $color-blue;
+                    opacity: .7;
+                    font-size: 1.2rem;
+                    letter-spacing: .1em;
+                    color: $color-white;
+                    transition: all .4s;
+                    cursor: pointer;
+
+                    &:hover {
+                        opacity: .9;
+                    }
+                }
+
+            }
+        }
+    }
+}

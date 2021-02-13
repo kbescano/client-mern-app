@@ -1,0 +1,56 @@
+// Color
+
+$color-white: #fff;
+$color-black: #000;
+$color-blue: #0B3954;
+$color-lightblue:#2B9EB3;
+$color-red: #F8333C;
+$color-dark: #424342;
+$color-green: #44AF69;
+$color-light: #FFCB47;
+
+
+// Media break points
+$screen-xs-max: 420px;
+$screen-sm-max: 596px;
+$screen-md-max: 768px;
+$screen-lg-max: 1024px;
+$screen-xl-min: 1100px;
+
+// Mixins
+
+@mixin xs {
+    @media (max-width: #{$screen-xs-max}) {
+        @content;
+    }
+}
+
+@mixin sm {
+    @media (max-width: #{$screen-sm-max}) {
+        @content;
+    }
+}
+
+@mixin md {
+    @media (max-width: #{$screen-md-max}) {
+        @content;
+    }
+}
+
+@mixin lg {
+    @media (max-width: #{$screen-lg-max}) {
+        @content;
+    }
+}
+
+@mixin xl {
+    @media (min-width: #{$screen-xl-min}) {
+        @content;
+    }
+}
+
+@mixin xl {
+    @media (min-width: #{$screen-xl-min}) {
+        @content;
+    }
+}
