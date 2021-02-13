@@ -112,7 +112,6 @@ export const getUserDetails = (id) => async (dispatch, getState) => {
 
         const {data} = await axios.get(`https://mern-ecom-app.herokuapp.com/api/users/${id}`, config)
 
-
         dispatch({type: USER_DETAILS_SUCCESS, payload: data})
 
     } catch (error) {

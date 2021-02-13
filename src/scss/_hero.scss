@@ -141,7 +141,7 @@
                 }
 
                 @include sm {
-                    object-fit: fill;
+                    object-fit: contain;
                     background-position: center;
                 }
             }
