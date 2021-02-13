@@ -68,11 +68,8 @@ const ProductScreen = ({match, location, history}) => {
 
     const submithandler = (e) => {
         e.preventDefault()
-        if(errorCreate) {
-            toast.error(`${errorCreate}`)
-        } else {
-            dispatch(createProductReview( match.params.id, { rating, comment}))
-        }
+        dispatch(createProductReview( match.params.id, { rating, comment}))
+
     }
     return (
         <>  
