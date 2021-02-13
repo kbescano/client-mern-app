@@ -58,23 +58,6 @@ export const getProductDetails = (id) => async (dispatch) => {
     }
 }
 
-export const getProductCategory = (id) => async (dispatch) => {
-    try {
-        dispatch({type: PRODUCT_CATEGORY_REQUEST})
-
-        const {data} = await axios.get(`https://mern-ecom-app.herokuapp.com/api/products/category/${id}`)
-
-        dispatch({type: PRODUCT_CATEGORY_SUCCESS, payload: data})
-
-
-    } catch (error) {
-        dispatch({
-            type: PRODUCT_CATEGORY_FAIL,
-            payload: error.response && error.response.data.message ? error.response.data.message : error.message
-        })
-    }
-}
-
 export const createProduct = (product) => async (dispatch, getState) => {
     try {
         dispatch({type: PRODUCT_CREATE_REQUEST})

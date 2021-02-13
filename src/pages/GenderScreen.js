@@ -38,12 +38,8 @@ const CategoryScreen = ({match}) => {
     console.log(sortedCategory)
 
     useEffect(() => {
-        if(keyword) {
-            dispatch(listProducts(keyword))
-        } else {
-            dispatch(getProductCategory(productId))
-        }
-    }, [dispatch, productId, keyword])
+        dispatch(listProducts(keyword))
+    }, [dispatch])
 
     useEffect(() => {
         if(!loading) {

@@ -26,23 +26,19 @@ const CategoryScreen = ({ match }) => {
 
     const productList = useSelector(state => state.productList)
 
-    const { loading, products } = productList
+    const { loading,  products } = productList
 
     const productId = match.params.id
 
-    console.log(productId)
+    console.log(products)
 
-    const productCategory = products.filter(item => item.category === productId)
+    const productCategories = products.filter(item => item.category === productId)
 
-    const sortedCategory = productCategory.sort((a, b) => (a.gender > b.gender ? 1 : -1))
+    const sortedCategory = productCategories.sort((a, b) => (a.gender > b.gender ? 1 : -1))
 
     useEffect(() => {
-        if(keyword){
-            dispatch(listProducts(keyword))
-        } else {
-            dispatch(getProductCategory(productId))
-        }
-    }, [dispatch, productId, keyword])
+        dispatch(listProducts(keyword))
+    }, [dispatch])
 
     useEffect(() => {
         if(!loading) {
@@ -52,8 +48,8 @@ const CategoryScreen = ({ match }) => {
     }, [loading])
 
     return (
-        <>
-            {loading ? <Loader /> : (
+        <>  
+            {loading? <Loader /> : (
                 <>
                     <Meta title='View Products' />
                     <Navbar color='#0D1321' text='#fff' />

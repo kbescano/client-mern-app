@@ -52,9 +52,6 @@ const OrderScreen = ({ history, match }) => {
 
 
     useEffect(() => {
-        if (!userInfo) {
-            history.push('/login')
-        }
         const addPayPalScript = async () => {
             const { data: clientId } = await axios.get('https://mern-ecom-app.herokuapp.com/api/config/paypal')
             console.log(clientId)
@@ -68,25 +65,18 @@ const OrderScreen = ({ history, match }) => {
             document.body.appendChild(script)
         }
 
+        if(loading) {
+            addPayPalScript()
+        }
+
         if (!order || successPay || successDeliver) {
             dispatch({ type: CART_ITEM_RESET })
             dispatch({ type: ORDER_PAY_RESET })
             dispatch({ type: ORDER_DELIVER_RESET })
             dispatch(getOrderDetails(orderId))
-        } else if (!order.isPaid) {
-            if (!window.paypal) {
-                addPayPalScript()
-            } else {
-                setSdkReady(true)
-            }
-        }
+        } 
 
-        if(loading) {
-            addPayPalScript()
-        }
-
-
-    }, [dispatch, orderId, successPay, userInfo, order, successDeliver, history, setSdkReady])
+    }, [dispatch, orderId, successPay,  order, successDeliver,setSdkReady])
 
     useEffect(() => {
         if(!loading) {
@@ -114,7 +104,7 @@ const OrderScreen = ({ history, match }) => {
                 <Navbar />
                 {loadingDeliver && <Loader />}
                 {loadingPay && <Loader />}
-                {successPay ? (<CheckoutStep />) : (<CheckoutStep step1 step2 step3 step4 />)}
+                <CheckoutStep />
                 <div className='order' ref={el => con = el}>
                     <div className='order__container' ref={el => a = el}>
                         <h1>Order:<span>{order._id}</span></h1>

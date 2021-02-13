@@ -196,9 +196,7 @@ export const deliverOrder = (order) => async (dispatch, getState) => {
 
         }
 
-        const {data} = await axios.put(`https://mern-ecom-app.herokuapp.com/api/orders/${
-            order._id
-        }/deliver`, {}, config)
+        const {data} = await axios.put(`https://mern-ecom-app.herokuapp.com/api/orders/${order._id}/deliver`, {}, config)
 
         dispatch({type: ORDER_DELIVER_SUCCESS, payload: data})
         toast('Successfully delivered!')

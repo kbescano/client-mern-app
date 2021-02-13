@@ -1,6 +1,6 @@
 import axios from 'axios'
 import {CART_ITEM_RESET} from '../constant/cartConstants'
-import {ORDER_LIST_MY_RESET} from '../constant/orderConstants'
+import {ORDER_CREATE_RESET, ORDER_LIST_MY_RESET} from '../constant/orderConstants'
 import {
     USER_DELETE_FAIL,
     USER_DELETE_REQUEST,
@@ -264,10 +264,15 @@ export const userUpdateId = (user) => async (dispatch, getState) => {
 export const logout = () => (dispatch) => {
 
     localStorage.removeItem('userInfo')
+    localStorage.removeItem('cartItems')
+    localStorage.removeItem('shippingAddress')
+    localStorage.removeItem('paymentMethod')
+    localStorage.removeItem('__paypal_storage__')
     dispatch({type: USER_LOGOUT})
     dispatch({type: USER_DETAILS_RESET})
     dispatch({type: ORDER_LIST_MY_RESET})
     dispatch({type: USER_LIST_RESET})
     dispatch({type: CART_ITEM_RESET})
+    dispatch({type: ORDER_CREATE_RESET})
     toast('Logged out Successfully')
 }
