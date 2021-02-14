@@ -23,6 +23,7 @@ body {
   font-family: 'Roboto', sans-serif;
   line-height: 1.25rem;
   min-height: 100vh;
+  position: relative;
 }
 
 ::selection {
@@ -52,13 +53,13 @@ i {
 }
 
 footer {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  top: 0;
+  position: fixed;
+  bottom: 0;
   text-align: center;
   font-size: 1.5rem;
-  color: $color-dark;
-  opacity: .2;
+  color: $color-dark; 
+  opacity: .1;
   height: 10vh;
+  width: 100%;
+  z-index: -1;
 }
