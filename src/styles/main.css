@@ -53,7 +53,27 @@ header {
   background-color: #fff;
   box-shadow: rgba(0, 0, 0, 0.2) 0px 8px 24px 0px;
   width: 100%;
-  visibility: hidden; }
+  visibility: hidden;
+  position: relative; }
+  header img {
+    display: none; }
+  @media (max-width: 596px) {
+    header .bg1 {
+      display: block;
+      position: absolute;
+      top: 0;
+      left: 50%;
+      width: 5rem;
+      transform: translateY(-10px);
+      filter: drop-shadow(-12px -2px 7px rgba(0, 0, 0, 0.5));
+      transform: rotate(-60deg);
+      animation: leaf1 5s infinite alternate-reverse;
+      z-index: 1000; }
+    @keyframes leaf1 {
+      from {
+        transform: translateY(10px) rotate(-60deg); }
+      to {
+        transform: translateY(0) rotate(20deg); } } }
 
 .nav {
   display: flex;
@@ -360,22 +380,22 @@ header {
   .hero-carousel__left-arrow i {
     position: absolute;
     top: 50%;
-    left: 20%;
+    left: 10%;
     transform: translate(0%, -50%);
     font-size: 5rem;
     cursor: pointer;
     z-index: 10;
-    color: #000;
+    color: #2B9EB3;
     opacity: .5; }
   .hero-carousel__right-arrow i {
     position: absolute;
     top: 50%;
-    right: 20%;
+    right: 10%;
     transform: translate(0%, -50%);
     font-size: 5rem;
     cursor: pointer;
     z-index: 10;
-    color: #000;
+    color: #2B9EB3;
     opacity: .5; }
   .hero-carousel__slider {
     opacity: 0;
@@ -751,6 +771,11 @@ header {
       .nav-left ul li:hover {
         background-color: #0B3954;
         color: #fff; }
+      @media (max-width: 596px) {
+        .nav-left ul li:hover, .nav-left ul li:focus {
+          outline: none;
+          background-color: white;
+          color: #2B9EB3; } }
 
 .product-right {
   display: flex;
@@ -951,20 +976,20 @@ header {
     border: 1px solid rgba(11, 57, 84, 0.1);
     box-shadow: rgba(0, 0, 0, 0.2) 0px 8px 24px 0px;
     visibility: hidden; }
-    @media (max-width: 420px) {
-      .login__main {
-        width: 100%; } }
-    @media (max-width: 768px) {
-      .login__main {
-        width: calc(100% + -3em);
-        height: 60rem;
-        padding: 5rem; } }
     @media (max-width: 1024px) {
       .login__main {
         width: calc(100% + -1em);
         height: 70rem;
         gap: 3rem;
         padding: 3rem; } }
+    @media (max-width: 768px) {
+      .login__main {
+        width: calc(100% + -3em);
+        height: 60rem;
+        padding: 5rem; } }
+    @media (max-width: 596px) {
+      .login__main {
+        width: 100%; } }
     .login__main > * {
       flex-basis: 100%; }
     @media (max-width: 768px) {
@@ -1602,20 +1627,20 @@ header {
     border-radius: .5rem;
     box-shadow: rgba(0, 0, 0, 0.2) 0px 8px 24px 0px;
     visibility: hidden; }
-    @media (max-width: 420px) {
-      .register__main {
-        width: 100%; } }
-    @media (max-width: 768px) {
-      .register__main {
-        width: calc(100% + -3em);
-        height: 60rem;
-        padding: 5rem; } }
     @media (max-width: 1024px) {
       .register__main {
         width: calc(100% + -1em);
         height: 70rem;
         gap: 3rem;
         padding: 3rem; } }
+    @media (max-width: 768px) {
+      .register__main {
+        width: calc(100% + -3em);
+        height: 60rem;
+        padding: 5rem; } }
+    @media (max-width: 596px) {
+      .register__main {
+        width: 100%; } }
     .register__main > * {
       flex-basis: 100%; }
     @media (max-width: 768px) {

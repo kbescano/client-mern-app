@@ -89,5 +89,12 @@ export const users = [
 
 ]
 
+export const bg = [
+  {
+    image: '/images/bg1.png'
+  }
+
+]
+
 
   

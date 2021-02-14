@@ -32,8 +32,11 @@
         box-shadow: rgba(0, 0, 0, 0.20) 0px 8px 24px 0px;
         visibility: hidden;
 
-        @include xs {
-            width: 100%;
+        @include lg{
+            width: calc(100% + -1em);
+            height: 70rem;
+            gap: 3rem;
+            padding: 3rem;
         }
 
         @include md {
@@ -42,12 +45,11 @@
             padding: 5rem;
         }
 
-        @include lg{
-            width: calc(100% + -1em);
-            height: 70rem;
-            gap: 3rem;
-            padding: 3rem;
+        @include sm {
+            width: 100%;
         }
+
+        
 
         >* {
             flex-basis: 100%;

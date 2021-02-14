@@ -6,6 +6,7 @@ import {toast} from 'react-toastify'
 import {TweenLite, Power3} from 'gsap'
 import { gsap } from 'gsap'
 import { CSSPlugin } from 'gsap/CSSPlugin'
+import {bg} from '../data/data'
 
 const Navbar = ({ color, text }) => {
 
@@ -57,6 +58,7 @@ const Navbar = ({ color, text }) => {
   return (
     <>
       <header style={{ backgroundColor: color }} ref={el => con = el}>
+        <img className='bg1' src={bg[0].image} alt="background-image" />
         <nav className='nav' style={{ backgroundColor: color }}>
           <Link to='/' className='nav__logo' style={{ color: text }} ref={el => a = el}>Cosmically 
           <span ref={el => b = el}>Conscious</span></Link>

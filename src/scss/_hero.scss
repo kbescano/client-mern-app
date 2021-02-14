@@ -73,24 +73,24 @@
     &__left-arrow i {
         position: absolute;
         top: 50%;
-        left: 20%;
+        left: 10%;
         transform: translate(0%, -50%);
         font-size: 5rem;
         cursor: pointer;
         z-index: 10;
-        color: $color-black;
+        color: $color-lightblue;
         opacity: .5;
     }
 
     &__right-arrow i {
         position: absolute;
         top: 50%;
-        right: 20%;
+        right: 10%;
         transform: translate(0%, -50%);
         font-size: 5rem;
         cursor: pointer;
         z-index: 10;
-        color: $color-black;
+        color: $color-lightblue;
         opacity: .5;
     }
 

@@ -7,6 +7,39 @@ header {
     box-shadow: rgba(0, 0, 0, 0.20) 0px 8px 24px 0px;
     width: 100%;
     visibility: hidden;
+    position: relative;
+
+    img {
+        display: none; 
+    }
+
+    .bg1 {
+
+        @include sm {
+
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 50%;
+        width: 5rem;
+        transform: translateY(-10px);
+        filter: drop-shadow(-12px -2px 7px rgba(0,0,0,.5));
+        transform: rotate(-60deg);
+        animation: leaf1 5s infinite alternate-reverse;
+        z-index: 1000;
+
+        @keyframes leaf1 {
+            from {
+                transform: translateY(10px) rotate(-60deg);
+            }
+            to {
+                transform: translateY(0) rotate(20deg);
+            }
+        }
+
+        }
+        
+    }
 }
 
 .nav {
