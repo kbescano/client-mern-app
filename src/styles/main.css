@@ -308,7 +308,7 @@ header {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 90vh;
+  height: 100vh;
   width: 100%;
   overflow: hidden;
   background-size: 300%;
@@ -329,7 +329,7 @@ header {
     top: 40%;
     z-index: 20;
     color: #fff;
-    font-size: clamp(2rem, 5vw, 4rem);
+    font-size: clamp(2rem, 3vw, 4rem);
     text-shadow: 3px 3px 10px black; }
   .hero-carousel--btn {
     position: absolute;
@@ -389,22 +389,23 @@ header {
       transform: scale(1.08);
       position: relative;
       width: 60%;
-      margin: 0 auto; }
+      margin: 0 auto;
+      height: 100vh; }
+      @media (max-width: 1024px) {
+        .hero-carousel__slider--active {
+          width: 70%; } }
       @media (max-width: 768px) {
         .hero-carousel__slider--active {
           width: 80%; } }
       @media (max-width: 596px) {
         .hero-carousel__slider--active {
-          width: 90%; } }
-      @media (max-width: 1024px) {
-        .hero-carousel__slider--active {
-          width: 70%; } }
+          width: 85%; } }
       .hero-carousel__slider--active img {
         height: 100vh;
         display: block;
         width: 100rem;
         object-fit: cover;
-        object-position: center bottom;
+        object-position: center;
         max-width: 100%; }
         @media (max-width: 768px) {
           .hero-carousel__slider--active img {
@@ -415,8 +416,9 @@ header {
             align-items: center; } }
         @media (max-width: 596px) {
           .hero-carousel__slider--active img {
-            object-fit: contain;
-            background-position: center; } }
+            background-position: center;
+            max-width: 100%;
+            object-fit: cover; } }
       .hero-carousel__slider--active button {
         display: flex;
         bottom: 5%;
@@ -1063,7 +1065,7 @@ header {
       width: 80%; } }
   @media (max-width: 596px) {
     .userlist {
-      width: 95%; } }
+      width: 100%; } }
   .userlist td,
   .userlist th {
     padding: 1em;
@@ -1134,11 +1136,13 @@ header {
     @media (max-width: 768px) {
       .list__container--button {
         width: calc(100% + -5em); } }
+    @media (max-width: 596px) {
+      .list__container--button {
+        width: calc(100% + -1em); } }
     .list__container--button button {
       padding: 1.5em 2em;
       font-size: 1rem;
-      border: 1px solid rgba(11, 57, 84, 0.05);
-      box-shadow: rgba(0, 0, 0, 0.2) 0px 8px 24px 0px;
+      border: 1px solid rgba(11, 57, 84, 0.8);
       background-color: #fff;
       color: #0B3954;
       outline: none;
@@ -1160,12 +1164,12 @@ header {
   background-color: #fff;
   padding: 1rem;
   position: relative; }
-  @media (max-width: 596px) {
-    .productlist {
-      width: 95%; } }
   @media (max-width: 1024px) {
     .productlist {
       width: 80%; } }
+  @media (max-width: 596px) {
+    .productlist {
+      width: 100%; } }
   .productlist--name > * {
     color: #0B3954;
     font-weight: 600; }
@@ -1181,6 +1185,9 @@ header {
         padding: 1.5rem 2.5rem; } }
   .productlist td .fa-edit {
     color: #44AF69; }
+    @media (max-width: 596px) {
+      .productlist td .fa-edit {
+        margin-right: 1rem; } }
   .productlist td .fa-trash {
     color: #F8333C; }
   @media (max-width: 596px) {
@@ -1279,9 +1286,9 @@ header {
     align-items: center;
     flex-direction: column;
     width: 13rem;
-    height: 20rem;
+    height: 25rem;
     box-shadow: 0 1px 2px -1px #424342;
-    margin-bottom: 2rem; }
+    margin: 3rem 0; }
     .cart__item > * {
       padding-bottom: 1rem; }
     @media (max-width: 420px) {
@@ -1295,13 +1302,14 @@ header {
       object-fit: cover; }
       @media (max-width: 596px) {
         .cart__item--img img {
-          object-fit: fill; } }
+          object-fit: fill;
+          height: 16rem; } }
     .cart__item--details h1 {
       font-size: 1rem; }
     .cart__item--details p {
       font-size: 1rem; }
     .cart__item--quantity select {
-      height: 2rem;
+      height: 3rem;
       width: 5rem;
       outline: none;
       border: none;
@@ -1705,6 +1713,9 @@ header {
   margin: 0 auto;
   flex-wrap: wrap;
   visibility: hidden; }
+  @media (max-width: 596px) {
+    .profile {
+      padding: 5rem 0rem; } }
   .profile__main {
     display: flex;
     justify-content: center;
@@ -1749,9 +1760,8 @@ header {
         text-align: left; }
         @media (max-width: 596px) {
           .profile__main--order table td {
-            text-align: right;
-            padding-left: 50%;
-            text-align: right;
+            text-align: center;
+            padding-left: 70%;
             position: relative; } }
         @media (max-width: 596px) {
           .profile__main--order table td::before {

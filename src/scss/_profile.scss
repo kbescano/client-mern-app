@@ -10,6 +10,10 @@
     flex-wrap: wrap;
     visibility: hidden;
 
+    @include sm {
+        padding: 5rem 0rem;
+    }
+
 
     &__main {
         display: flex;
@@ -72,9 +76,8 @@
                     text-align: left;
 
                     @include sm {
-                        text-align: right;
-                        padding-left: 50%;
-                        text-align: right;
+                        text-align: center;
+                        padding-left: 70%;
                         position: relative;
                     }
 

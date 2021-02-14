@@ -82,9 +82,10 @@
         align-items: center;
         flex-direction: column;
         width: 13rem;
-        height: 20rem;
+        height: 25rem;
         box-shadow: 0 1px 2px -1px $color-dark;
-        margin-bottom: 2rem;
+        margin: 3rem 0;
+
 
         >* {
             padding-bottom: 1rem;
@@ -109,6 +110,7 @@
 
                 @include sm {
                     object-fit: fill;
+                    height: 16rem;
                 }
 
             }
@@ -128,7 +130,7 @@
 
         &--quantity {
             select {
-                height: 2rem;
+                height: 3rem;
                 width: 5rem;
                 outline: none;
                 border: none;

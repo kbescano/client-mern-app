@@ -23,12 +23,15 @@
             width: calc(100% + -5em);
         }
 
+        @include sm {
+            width: calc(100% + -1em);
+        }
+
 
         button {
             padding: 1.5em 2em;
             font-size: 1rem;
-            border: 1px solid rgba($color: $color-blue, $alpha: .05);
-            box-shadow: rgba(0, 0, 0, 0.20) 0px 8px 24px 0px;
+            border: 1px solid rgba($color: $color-blue, $alpha: .8);
             background-color: $color-white;
             color: $color-blue;
             outline: none;
@@ -60,13 +63,14 @@
     padding: 1rem;
     position: relative;
 
-    @include sm {
-        width: 95%;
-    }
-
     @include lg {
         width: 80%;
     }
+    @include sm {
+        width: 100%;
+    }
+
+   
 
     &--name {
 
@@ -93,6 +97,10 @@
 
         .fa-edit {
             color: $color-green;
+
+            @include sm {
+                margin-right: 1rem;
+            }
         }
 
         .fa-trash {

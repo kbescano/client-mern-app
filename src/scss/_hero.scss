@@ -2,7 +2,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 90vh;
+    height: 100vh;
     width: 100%;
     overflow: hidden;
     background-size: 300%;
@@ -30,7 +30,7 @@
         top: 40%;
         z-index: 20;
         color: $color-white;
-        font-size: clamp(2rem, 5vw, 4rem);
+        font-size: clamp(2rem, 3vw, 4rem);
         text-shadow: 3px 3px 10px black;
 
     }
@@ -109,18 +109,21 @@
             position: relative;
             width: 60%;
             margin: 0 auto;
+            height: 100vh;
+
+            @include lg {
+                width: 70%;
+            }
 
             @include md {
                 width: 80%;
             }
 
             @include sm {
-                width: 90%;
+                width: 85%;
             }
 
-            @include lg {
-                width: 70%;
-            }
+         
 
 
             img {
@@ -128,7 +131,7 @@
                 display: block;
                 width: 100rem;
                 object-fit: cover;
-                object-position: center bottom;
+                object-position: center;
                 max-width: 100%;
 
 
@@ -141,8 +144,9 @@
                 }
 
                 @include sm {
-                    object-fit: contain;
                     background-position: center;
+                    max-width: 100%;
+                    object-fit: cover;
                 }
             }
 
