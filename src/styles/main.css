@@ -861,7 +861,7 @@ header {
         background-position: center;
         background-image: radial-gradient(circle, transparent 1%, #2B9EB3 0.5%);
         background-size: 12000%;
-        opacity: .9; }
+        opacity: 1; }
         .products__main--button button:active {
           background-color: #fff;
           transition: background 0s;
