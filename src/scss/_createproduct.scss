@@ -3,26 +3,16 @@
 .createproduct {
     display: flex;
     justify-content: center;
-    width: 75%;
+    width: 100%;
     margin: 5rem auto;
     height: 80rem;
-
-    @include md {
-        width: 90%;
-        padding: 2rem;
-        margin: 2rem auto;
-    }
-
-    @include sm {
-        width: 100%;
-    }
 
     &__main {
         display: flex;
         justify-content: center;
         align-items: center;
         background-color: $color-white;
-        width: 80%;
+        width: 60%;
         border: none;
         padding: 5rem 0;
         gap: 5rem;
@@ -31,6 +21,11 @@
 
         @include md {
             width: 90%;
+            padding: 2rem 0;
+        }
+
+        @include sm {
+            width: 100%;
             padding: 2rem 0;
         }
 

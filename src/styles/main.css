@@ -1519,23 +1519,15 @@ header {
 .createproduct {
   display: flex;
   justify-content: center;
-  width: 75%;
+  width: 100%;
   margin: 5rem auto;
   height: 80rem; }
-  @media (max-width: 768px) {
-    .createproduct {
-      width: 90%;
-      padding: 2rem;
-      margin: 2rem auto; } }
-  @media (max-width: 596px) {
-    .createproduct {
-      width: 100%; } }
   .createproduct__main {
     display: flex;
     justify-content: center;
     align-items: center;
     background-color: #fff;
-    width: 80%;
+    width: 60%;
     border: none;
     padding: 5rem 0;
     gap: 5rem;
@@ -1544,6 +1536,10 @@ header {
     @media (max-width: 768px) {
       .createproduct__main {
         width: 90%;
+        padding: 2rem 0; } }
+    @media (max-width: 596px) {
+      .createproduct__main {
+        width: 100%;
         padding: 2rem 0; } }
     .createproduct__main--content {
       display: flex;
