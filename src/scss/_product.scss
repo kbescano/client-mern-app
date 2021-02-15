@@ -95,17 +95,23 @@
         flex-direction: column;
         gap: 1rem;
 
+        @include sm {
+            padding: 0 1rem;
+        }
+
         &--name {
             font-size: clamp(1rem, 4vw, 2rem);
             color: $color-blue;
-
-
         }
 
         &--details {
             display: flex;
             gap: 5rem;
             font-size: clamp(.6rem, 4vw, 1.6rem);
+
+            @include sm {
+                gap: 7rem;
+            }
 
         }
 
@@ -124,6 +130,7 @@
 
             @include sm {
                 justify-content: center;
+                
             }
 
             button {
@@ -133,9 +140,11 @@
                 outline: none;
                 border: none;
                 cursor: pointer;
-
                 animation: animated-border 1.5s infinite;
-                ;
+                
+                @include sm {
+                    width: 100%;
+                }
 
                 @keyframes animated-border {
                     0% {
@@ -285,6 +294,11 @@
     
                         &::placeholder {
                             font-size: 1rem;
+                            
+                        }
+
+                        @include sm {
+                            width: 82%;
                         }
                     }
 
