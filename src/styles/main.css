@@ -54,7 +54,10 @@ header {
   box-shadow: rgba(0, 0, 0, 0.2) 0px 8px 24px 0px;
   width: 100%;
   visibility: hidden;
-  position: relative; }
+  position: relative;
+  position: sticky;
+  top: 0;
+  z-index: 100000000; }
   header img {
     display: none; }
   @media (max-width: 596px) {
