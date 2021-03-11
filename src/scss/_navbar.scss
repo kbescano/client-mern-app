@@ -4,44 +4,44 @@
 header {
     height: 10vh;
     background-color: $color-white;
-    box-shadow: rgba(0, 0, 0, 0.20) 0px 8px 24px 0px;
+    box-shadow: rgba(0, 0, 0, 0.20) 0 8px 24px 0;
     width: 100%;
     visibility: hidden;
     position: relative;
     position: sticky;
     top: 0;
-    z-index: 100000000;
+    z-index: 100;
 
     img {
-        display: none; 
+        display: none;
     }
 
     .bg1 {
 
         @include sm {
 
-        display: block;
-        position: absolute;
-        top: 0;
-        left: 50%;
-        width: 5rem;
-        transform: translateY(-10px);
-        filter: drop-shadow(-12px -2px 7px rgba(0,0,0,.5));
-        transform: rotate(-60deg);
-        animation: leaf1 5s infinite alternate-reverse;
-        z-index: 1000;
+            display: block;
+            position: absolute;
+            top: 0;
+            left: 50%;
+            width: 5rem;
+            transform: translateY(-10px);
+            filter: drop-shadow(-12px -2px 7px rgba(0,0,0,.5));
+            transform: rotate(-60deg);
+            animation: leaf1 5s infinite alternate-reverse;
+            z-index: 1000;
 
-        @keyframes leaf1 {
-            from {
-                transform: translateY(10px) rotate(-60deg);
+            @keyframes leaf1 {
+                from {
+                    transform: translateY(10px) rotate(-60deg);
+                }
+                to {
+                    transform: translateY(0) rotate(20deg);
+                }
             }
-            to {
-                transform: translateY(0) rotate(20deg);
-            }
+
         }
 
-        }
-        
     }
 }
 
@@ -79,7 +79,7 @@ header {
         font-family: 'Dancing Script', cursive;
         font-size: 2.2rem;
         font-weight: 600;
-        letter-spacing: .2rem;
+        letter-spacing: 0.2rem;
         color: $color-black;
         cursor: pointer;
 
@@ -87,12 +87,12 @@ header {
             color: $color-blue;
         }
 
-        &:hover>span {
+        &:hover > span {
             color: $color-lightblue;
         }
 
         span {
-            padding-left: .5rem;
+            padding-left: 0.5rem;
             color: $color-lightblue;
 
             &:hover {
@@ -124,18 +124,18 @@ header {
             display: none;
         }
 
-        p { 
+        p {
             display: flex;
             cursor: pointer;
             color: $color-black;
-            letter-spacing: .2rem;
+            letter-spacing: 0.2rem;
 
             &:hover {
                 color: $color-blue;
             }
 
             i {
-                padding-right: .1em;
+                padding-right: 0.1em;
             }
         }
 
@@ -150,12 +150,12 @@ header {
                 cursor: pointer;
                 border: none;
                 outline: none;
-                padding: .5em 1em;
+                padding: 0.5em 1em;
                 background-color: $color-white;
-                letter-spacing: .2rem;
+                letter-spacing: 0.2rem;
                 color: $color-blue;
                 font-size: clamp(1rem, 5vw, 1.1rem);
-                
+
 
                 &:hover {
                     color: $color-black;
@@ -168,7 +168,7 @@ header {
 
 
                 i {
-                    padding-left: .2em;
+                    padding-left: 0.2em;
 
                 }
             }
@@ -180,13 +180,13 @@ header {
                 align-items: center;
                 flex-direction: column;
                 background-color: $color-white;
-                box-shadow: rgba(0, 0, 0, 0.20) 0px 8px 24px 0px;
-                margin-top: .5rem;
+                box-shadow: rgba(0, 0, 0, 0.20) 0 8px 24px 0;
+                margin-top: 0.5rem;
                 width: 10rem;
-                border-radius: .5rem;
-                transition: all 1s .5s ease;
+                border-radius: 0.5rem;
+                transition: all 1s 0.5s ease;
 
-                >* {
+                > * {
                     padding: 1em 2em;
                     color: $color-blue;
                     width: 100%;
@@ -212,21 +212,20 @@ header {
         }
 
 
-
         &--button {
             color: $color-white;
             border: none;
-            border-radius: .5rem;
+            border-radius: 0.5rem;
             padding: 0 1.5rem;
             height: 2.5rem;
             font-size: 1.2rem;
             outline: none;
             background-color: $color-lightblue;
-            transition: background .8s;
+            transition: background 0.8s;
             background-position: center;
             background-image: radial-gradient(circle, transparent 1%, $color-lightblue .5%);
             background-size: 12000%;
-            transition: all .3s ease;
+            transition: all 0.3s ease;
             opacity: .9;
             cursor: pointer;
 
@@ -240,11 +239,10 @@ header {
                 color: $color-lightblue;
                 background-color: $color-white;
                 box-shadow: 0 1px 1px -1px $color-dark;
-                border-radius: .5rem;
+                border-radius: 0.5rem;
             }
 
         }
-
 
 
     }
@@ -269,7 +267,7 @@ header {
 
 }
 
-.nav>* {
+.nav > * {
     flex-basis: 100%;
 }
 
@@ -318,14 +316,14 @@ header {
             align-items: center;
             padding: 0 16px;
             border-radius: 4px;
-            letter-spacing: .2em;
+            letter-spacing: 0.2em;
 
             &:hover {
                 color: $color-blue;
             }
 
             i {
-                padding-right: .5em;
+                padding-right: 0.5em;
             }
 
         }
@@ -341,15 +339,15 @@ header {
                 cursor: pointer;
                 border: none;
                 outline: none;
-                padding: .5em 1em;
+                padding: 0.5em 1em;
                 background-color: $color-dark;
-                letter-spacing: .2rem;
+                letter-spacing: 0.2rem;
                 color: $color-white;
                 font-size: 2rem;
 
 
                 i {
-                    padding-left: .5em;
+                    padding-left: 0.5em;
                 }
             }
 
@@ -360,14 +358,14 @@ header {
                 align-items: center;
                 flex-direction: column;
                 background-color: $color-white;
-                box-shadow: rgba(0, 0, 0, 0.20) 0px 8px 24px 0px;
-                margin-top: .5rem;
+                box-shadow: rgba(0, 0, 0, 0.20) 0 8px 24px 0;
+                margin-top: 0.5rem;
                 width: 15rem;
                 height: 15rem;
-                border-radius: .5rem;
+                border-radius: 0.5rem;
 
-                >* {
-                    padding: 1rem 1rem;
+                > * {
+                    padding: 1rem;
                     color: $color-blue;
                     width: 100%;
                     font-size: 2rem;
@@ -389,10 +387,10 @@ header {
             height: 5rem;
             width: 10rem;
             font-size: 2rem;
-            border-radius: .5rem;
+            border-radius: 0.5rem;
             outline: none;
-            transition: all .3s;
-            letter-spacing: .1em;
+            transition: all 0.3s;
+            letter-spacing: 0.1em;
             cursor: pointer;
 
             &:hover {
